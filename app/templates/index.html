@@ -8,5 +8,13 @@
     <title>Welcome to the best News Source Review website</title>
     {% endif %}
   </head>
-  <body></body>
+  <body>
+    <!-- Popular movie section  -->
+    <h3>Popular source</h3>
+    <ul>
+      {% for popular_source in popular %}
+      <li>{{ popular_source.title }}</li>
+      {% endfor %}
+    </ul>
+  </body>
 </html>

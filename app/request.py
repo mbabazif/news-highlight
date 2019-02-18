@@ -14,7 +14,7 @@ def get_source(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_movies_url = base_url.format(category,api_key)
+    get_source_url = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
