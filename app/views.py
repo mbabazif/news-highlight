@@ -12,7 +12,7 @@ def index():
     return render_template('index.html', title = title)
 
 @app.route('/source/<source_id>')
-def source(source_id):
+def source(source_article):
 
     '''
     View source page function that returns the source details page and its data
@@ -21,5 +21,5 @@ def source(source_id):
     title = 'Home - Welcome to The best News Source Review Website Online'
     return render_template('source.html', title = title)
 
-    return render_template('source.html',id = source_id) 
+    return render_template('source.html',article = source_article) 
 
