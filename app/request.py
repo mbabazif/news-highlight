@@ -44,6 +44,7 @@ def process_results(article_list):
         author = article_item.get('author')
         description = article_item.get('description ')
         url = article_item.get('url ')
+        publishedAt = publishedAt_item.get('publishedAt')
 
         if poster:
             article_object = article((articles,title,name,author,description,url))

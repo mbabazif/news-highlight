@@ -8,11 +8,12 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
+   
    # Getting popular article
-   # Getting popular article
-    popular_article = get_article('popular')
-    upcoming_article = get_article('upcoming')
-    now_showing_article = get_article('now_playing')
+    popular_new_article = get_article('popular_new')
+    current_news_article = get_article('current_news')
+    date_showing_article = get_article('date_showing')
+  
     title = 'Home - Welcome to The best article Review Website Online'
     return render_template('index.html', title = title, popular = popular_article, upcoming = upcoming_article, now_showing = now_showing_article )
 
