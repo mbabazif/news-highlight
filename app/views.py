@@ -8,8 +8,11 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    title = 'Home - Welcome to The  n   News Source Review Website Online'
-    return render_template('index.html', title = title)
+   # Getting popular movie
+    popular_source = get_source('popular')
+    print(popular_source)
+    title = 'Home - Welcome to The best Source Review Website Online'
+    return render_template('index.html', title = title,popular = popular_source)
 
 @app.route('/source/<source_id>')
 def source(source_article):

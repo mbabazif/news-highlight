@@ -26,5 +26,28 @@ def get_source(category):
             source_results_list = get_source_response['results']
             source_results = process_results(source_results_list)
 
+def process_results(source_list):
+    '''
+    Function  that processes the source result and transform them to a list of Objects
 
+    Args:
+        source_list: A list of dictionaries that contain source details
+
+    Returns :
+        source_results: A list of source objects
+    '''
+    source_results = []
+    for source_item in source_list:
+        articles = source_item.get('articles ')
+        title = source_item.get('title ')
+        name = source_item.get('name')
+        author = source_item.get('author')
+        description = source_item.get('description ')
+        url = source_item.get('url ')
+
+        if poster:
+            source_object = source((articles,title,name,author,description,url))
+            source_results.append(source_object)
+
+    return movie_results
     return movie_results
