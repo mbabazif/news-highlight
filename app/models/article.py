@@ -1,6 +1,6 @@
-class Source:
+class ARTICLE:
     '''
-    Source class to define Source Objects
+    Article class to define Article Objects
     '''
 
     def __init__(self,articles,title,name,author,description,url):

@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    SOURCE_API_BASE_URL ='https://api.thesourcedb.org/3/source/{}?api_key={}'
+    ARTICLE_API_BASE_URL ='https://api.thearticledb.org/3/article/{}?api_key={}'
 
 
 
