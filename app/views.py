@@ -8,8 +8,8 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    message = 'News Source'
-    return render_template('index.html',message = message)
+    title = 'Home - Welcome to The  n   News Source Review Website Online'
+    return render_template('index.html', title = title)
 
 @app.route('/source/<source_id>')
 def source(source_id):
@@ -17,4 +17,9 @@ def source(source_id):
     '''
     View source page function that returns the source details page and its data
     '''
-    return render_template('source.html',id = source_id)    
+
+    title = 'Home - Welcome to The best News Source Review Website Online'
+    return render_template('source.html', title = title)
+
+    return render_template('source.html',id = source_id) 
+
