@@ -41,13 +41,16 @@ def process_results(article_list):
     '''
     article_results = []
     for article_item in article_list:
-        articles = article_item.get('articles ')
-        title = article_item.get('title ')
+        
+        
         name = article_item.get('name')
         author = article_item.get('author')
+        title = article_item.get('title ')
         description = article_item.get('description ')
         url = article_item.get('url ')
+        urlToImage = article_item.get('urlToImage ')
         publishedAt = publishedAt_item.get('publishedAt')
+        content = article_item.get('content ')
 
         if poster:
             article_object = article((articles,title,name,author,description,url))
