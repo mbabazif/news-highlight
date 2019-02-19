@@ -15,22 +15,6 @@ base_url = app.config["ARTICLE_API_BASE_URL"]
 base_url = app.config["SOURCE_API_BASE_URL"]
 # print(base_url)
 
-def get_article(category):
-    '''
-    Function that gets the json response to our url request
-    '''
-    get__url = base_url.format(api_key)
-    print(get__url)
-
-    with urllib.request.urlopen(get__url) as url:
-        get_article_data = url.read()
-        get_article_response = json.loads(get_article_data)
-        # print(get_article_response)
-        article_results = None
-
-        if get_article_response['results']:
-            article_results_list = get_article_response['results']
-            # article_results = process_results(article_results_list)
 
 def get_source(category):
     '''
@@ -68,38 +52,55 @@ def process_results(source_list):
         description = source_item.get('description ')
         country = source_item.get('country ')
         source_object = SOURCE(id,name,description,country)
-        source_results.append(source_object)     
-# def process_results(article_list):
-#     '''
-#     Function  that processes the article result and transform them to a list of Objects
+        source_results.append(source_object) 
 
-#     Args:
-#         article_list: A list of dictionaries that contain article details
+def get_article(category):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get__url = base_url.format(api_key)
+    print(get__url)
 
-#     Returns :
-#         article_results: A list of article objects
-#     '''
-#     article_results = []
-#     for article_item in article_list:
+    with urllib.request.urlopen(get__url) as url:
+        get_article_data = url.read()
+        get_article_response = json.loads(get_article_data)
+        # print(get_article_response)
+        article_results = None
+
+        if get_article_response['results']:
+            article_results_list = get_article_response['results']
+            # article_results = process_results(article_results_list)
+
+def process_results(article_list):
+    '''
+    Function  that processes the article result and transform them to a list of Objects
+
+    Args:
+        article_list: A list of dictionaries that contain article details
+
+    Returns :
+        article_results: A list of article objects
+    '''
+    article_results = []
+    for article_item in article_list:
         
         
-#         name = article_item.get('name')
-#         author = article_item.get('author')
-#         title = article_item.get('title ')
-#         description = article_item.get('description ')
-#         url = article_item.get('url ')
-#         urlToImage = article_item.get('urlToImage ')
-#         publishedAt = publishedAt_item.get('publishedAt')
-#         content = article_item.get('content ')
+        name = article_item.get('name')
+        author = article_item.get('author')
+        title = article_item.get('title ')
+        description = article_item.get('description ')
+        url = article_item.get('url ')
+        urlToImage = article_item.get('urlToImage ')
+        publishedAt = publishedAt_item.get('publishedAt')
+        content = article_item.get('content ')
 
-#         if urlToImage:
-#             article_object = article((articles,title,name,author,description,url))
-#             article_results.append(article_object)
+        if urlToImage:
+            article_object = article((articles,title,name,author,description,url))
+            article_results.append(article_object)
 
  
 
-        # if poster:
-        #              
+         
 
     return source_results
     
