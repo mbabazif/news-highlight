@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Welcome to the best News Article Review website</title>
-    {% extends 'base.html'%} {% endif %} {% import 'macros.html' as macro%}
-  </head>
-  <body>
-    <!-- Content block -->
-    {% block content %}
-    <!-- Popular movie -->
-    <h3>popular_news_</h3>
-    <ul>
-      <li>{{ macro.displaynewsList(popular) }}</li>
-    </ul>
-
-    <!-- Upcoming movie  -->
-    <h3>current_news_</h3>
-    <ul>
-      <li>{{ macro.displaynewsList(current) }}</li>
-    </ul>
-    <!-- Now showing movie -->
-    <h3>date_showing_</h3>
-    <ul>
-      <li>{{ macro.displaynewsList(date_showing) }}</li>
-    </ul>
-    {% endblock%}
-  </body>
-</html>
+{% extends 'base.html'%} {% import 'macros.html' as macro%}
+<!-- Content block -->
+{% block content %}
+<!-- Popular movie -->
+<h3>popular_news_</h3>
+<ul>
+  {% for source in popular_news %}
+  <li>{{ source.name }}</li>
+  {% endfor %}
+</ul>
+{% endblock%}
