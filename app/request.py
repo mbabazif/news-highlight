@@ -53,6 +53,7 @@ def process_results(source_list):
         country = source_item.get('country ')
         source_object = SOURCE(id,name,description,country)
         source_results.append(source_object) 
+    return source_results    
 
 def get_article(category):
     '''
@@ -69,7 +70,9 @@ def get_article(category):
 
         if get_article_response['results']:
             article_results_list = get_article_response['results']
-            # article_results = process_results(article_results_list)
+            article_results = process_results(article_results_list)
+    
+    return article_results
 
 def process_results(article_list):
     '''
@@ -95,12 +98,8 @@ def process_results(article_list):
         content = article_item.get('content ')
 
         if urlToImage:
-            article_object = article((articles,title,name,author,description,url))
-            article_results.append(article_object)
+            article_object = article((name,author,title,description,url,urlToImage,publishedAt,content))
+            article_results.append(article_object)   
 
- 
-
-         
-
-    return source_results
+    return article_results
     
