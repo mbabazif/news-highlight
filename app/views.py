@@ -12,12 +12,13 @@ def index():
     '''
    
    # Getting popular article
+   
     popular_new_article = get_source('popular_news')
-    current_news_article = get_source('current_news')
-    date_showing_article = get_source('date_showing')
+    current_news_article = get_source('description_news')
+    country_showing_article = get_source('country_location')
   
     title = 'Home - Welcome to The best article Review Website Online'
-    return render_template('index.html', title = title, popular_news= popular_new_article, current_news = current_news_article , date_showing = date_showing_article)
+    return render_template('index.html', title = title, popular_news= popular_new_article, current_news = current_news_article , country_showing= country_showing_article )
 
 @app.route('/article/<article_id>')
 def article(article_article):

@@ -8,4 +8,25 @@
   <li>{{ source.name }}</li>
   {% endfor %}
 </ul>
+<h3>Source_ids_</h3>
+<ul>
+  {% for source in current_news %}
+  <li>{{ source.id }}</li>
+  {% endfor %}
+</ul>
+
+<h3>description_news</h3>
+<ul>
+  {% for source in current_news %}
+  <li>{{ source.description }}</li>
+  {% endfor %}
+</ul>
+
+<h3>country_location</h3>
+<ul>
+  {% for source in country %}
+  <li>{{ source.country }}</li>
+  {% endfor %}
+</ul>
+
 {% endblock%}
