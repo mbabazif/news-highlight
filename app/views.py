@@ -1,6 +1,7 @@
 from flask import render_template
 from app import app
 from .request import get_article
+from .request import get_source
 
 # Views
 @app.route('/')
@@ -16,7 +17,7 @@ def index():
     date_showing_article = get_article('date_showing')
   
     title = 'Home - Welcome to The best article Review Website Online'
-    return render_template('index.html', title = title, popular = popular_article, upcoming = upcoming_article, now_showing = now_showing_article )
+    return render_template('index.html', title = title, popular_news= popular_new_article, current_news = current_news_article , date_showing = date_showing_article)
 
 @app.route('/article/<article_id>')
 def article(article_article):

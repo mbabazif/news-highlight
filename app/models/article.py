@@ -14,5 +14,5 @@ class ARTICLE:
         self.urlToImage = urlToImage
         self.publishedAt = publishedA
         self.content = content
-        
-        
+
+

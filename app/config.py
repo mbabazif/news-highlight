@@ -3,6 +3,7 @@ class Config:
     General configuration parent class
     '''
     ARTICLE_API_BASE_URL ='https://api.thearticledb.org/3/article/{}?api_key={}'
+    SOURCE_API_BASE_URL = 'https://newsapi.org/v2/sources/{}?api_key={}'
 
 
 

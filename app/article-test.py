@@ -2,7 +2,7 @@ import unittest
 from models import article
 article = article.article
 
-class ArticleTest(unittest.TestCase):
+class ARTICLETest(unittest.TestCase):
     '''
     Test Class to test the behaviour of the article class
     '''
