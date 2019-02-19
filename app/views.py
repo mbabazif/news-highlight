@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from .request import get_article
 
 # Views
 @app.route('/')
@@ -10,7 +11,7 @@ def index():
     '''
    
    # Getting popular article
-    popular_new_article = get_article('popular_new')
+    popular_new_article = get_article('popular_news')
     current_news_article = get_article('current_news')
     date_showing_article = get_article('date_showing')
   

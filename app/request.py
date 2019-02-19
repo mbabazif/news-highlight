@@ -1,25 +1,28 @@
 from app import app
 import urllib.request,json
-from .models import movie
+from .models import article
 
-Movie = movie.Movie
+ARTICLE = article.ARTICLE
 
 # Getting api key
 api_key = app.config['ARTICLE_API_KEY']
+print(api_key)
 
 # Getting the movie base url
 base_url = app.config["ARTICLE_API_BASE_URL"]
+print(base_url)
 
 def get_article(category):
     '''
     Function that gets the json response to our url request
     '''
     get__url = base_url.format(category,api_key)
+    print(get__url)
 
-    with urllib.request.urlopen(get_article_url) as url:
+    with urllib.request.urlopen(get__url) as url:
         get_article_data = url.read()
         get_article_response = json.loads(get_article_data)
-
+        print(get_article_response)
         article_results = None
 
         if get_article_response['results']:
