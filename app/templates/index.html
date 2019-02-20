@@ -5,9 +5,14 @@
 <!-- Content block -->
 {% block content %}
 <!-- Current News -->
-
-<h1 id="heading">current news</h1>
-<li>
-  {{ macro.displaySourceList(general) }}
-</li>
-{% endblock%}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="text-center" style="font-weight: bold; font-size: 28px;">
+      current news
+    </h1>
+  </div>
+  <li>
+    {{ macro.displaySourceList(general) }}
+  </li>
+  {% endblock%}
+</div>
