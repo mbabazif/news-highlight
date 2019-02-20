@@ -1,32 +1,14 @@
-{% extends 'base.html'%} {% import 'macros.html' as macro%}
+{% extends 'base.html'%} {% import 'macros.html' as macro%} {% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
+{% endblock %}
 <!-- Content block -->
 {% block content %}
-<!-- Popular movie -->
-<h3>popular_news_</h3>
-<ul>
-  {% for source in popular_news %}
-  <li>{{ source.name }}</li>
-  {% endfor %}
-</ul>
-<h3>Source_ids_</h3>
-<ul>
-  {% for source in current_news %}
-  <li>{{ source.id }}</li>
-  {% endfor %}
-</ul>
+<!-- Current News -->
 
-<h3>description_news</h3>
+<h1>curent news</h1>
 <ul>
-  {% for source in current_news %}
-  <li>{{ source.description }}</li>
-  {% endfor %}
-</ul>
-
-<h3>country_location</h3>
-<ul>
-  {% for source in country %}
-  <li>{{ source.country }}</li>
-  {% endfor %}
+  {{ macro displaySourceList(source_list) }}
 </ul>
 
 {% endblock%}

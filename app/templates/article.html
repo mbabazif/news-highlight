@@ -1,13 +1,8 @@
-<!-- <h1>News article {{ id }}</h1> -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Welcome to the best News Article Review website</title>
-    {% endif %}
-  </head>
-  <body></body>
-</html>
+{% extends 'base.html'%} {% import 'macros.html' as macro%} {% block content %}
+<div class="container">
+  <h2 class="text-center" style="font-weight: bold; font-size: 28px;">
+    Current News
+  </h2>
+  <hr />
+  <br />
+</div>

@@ -12,7 +12,7 @@ class ARTICLE:
         self.description = description
         self.url = url
         self.urlToImage = urlToImage
-        self.publishedAt = publisheAt
+        self.publishedAt = publishedAt
         self.content = content
 
 
