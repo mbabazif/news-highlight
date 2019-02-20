@@ -1,6 +1,18 @@
 {% macro displaySourceList(source_list) %} {% for source in source_list %}
-<li>{{ article.title }}</li>
-{% endfor %} {% endmacro %} {% macro displayarticleList(source_list) %} {% for
-source in source_list %}
-<li>{{ source.title }}</li>
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+  <a href="article/{{ source.id }}"> {{ source.name }}</a>
+  <!-- <p>{{ source.description }}</p>
+  <p>{{ source.country }}</p> -->
+  <p>{{ source.id }}</p>
+</div>
+{% endfor %} {% endmacro %} {% macro displayArticlesList(articles_list) %} {%
+for article in articles_list %}
+<img src="{{ article.urlToImage }}" />
+<h4>{{ article.author }}</h4>
+<h4>{{ article.title }}</h4>
+<h4>{{ article.description }}</h4>
+<h4>{{ article.url }}</h4>
+
+<h4>{{ article.publishedAt }}</h4>
+<h4>{{ article.content }}</h4>
 {% endfor %} {% endmacro %}

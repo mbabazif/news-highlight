@@ -12,14 +12,13 @@ def index():
     '''
    
    # Getting popular article
-    current_source = get_source('everything')
-   
-    # popular_new_article = get_source('popular_news')
-    # current_news_article = get_source('description_news')
-    # country_showing_article = get_source('country_location')
+    general_cat = get_source('general')
+    sports_cat = get_source('sports')
+    business_cat = get_source('business')
+    entertainment_cat = get_source('entertainment')
   
     title = 'Home - Welcome to The best article Review Website Online'
-    return render_template('index.html', title = title, popular_news= popular_news, current_news = current_news_ , country_showing= country_showing )
+    return render_template('index.html', title = title, general= general_cat, sports = sports_cat , entertainment=entertainment_cat)
 
 @app.route('/article/<id>')
 def article(id):
@@ -27,10 +26,12 @@ def article(id):
     '''
     View article page function that returns the article details page and its data
     '''
-    article = get_article(id)
+    articles = get_article(id)
+    
+    # print(articles)
     title = f'{id}'
     title = 'Home - Welcome to The best News article Review Website Online'
     # return render_template('article.html', title = title)
 
-    return render_template('article.html',article = article) 
+    return render_template('article.html',id = id, articles = articles) 
 

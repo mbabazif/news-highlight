@@ -1,4 +1,4 @@
-# password locker
+# News Highlight
 
 ### By Florence Mbabazi
 
@@ -9,13 +9,13 @@ The user is able to to click on the specified article and read the news wants to
 
 ### Prerequisite
 
+These are some of the setups we need to install before we install the flask:
+
 python3.6 -m venv --without-pip virtual.
 
 source virtual/bin/activate.
 
 curl https://bootstrap.pypa.io/get-pip.py | python.
-
-source virtual/bin/activate
 
 pip install flask.
 
@@ -29,7 +29,7 @@ pyperclip
 
 In your terminal:
 
-\$ git clone https://github.com/mbabazif/password-locker.git:
+\$ git clone https://github.com/mbabazif/news-highlight.git:
 
 To run the application, in your terminal:
 

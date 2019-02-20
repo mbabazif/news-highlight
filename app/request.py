@@ -6,12 +6,11 @@ from .models import source
 ARTICLE = article.ARTICLE
 SOURCE = source.SOURCE
 # Getting api key
-api_key = app.config['ARTICLE_API_KEY']
 api_key = app.config['SOURCE_API_KEY']
 # print(api_key)
 
 # Getting the api article url
-base_url = app.config["ARTICLE_API_BASE_URL"]
+article_base_url = app.config["ARTICLE_API_BASE_URL"]
 base_url = app.config["SOURCE_API_BASE_URL"]
 # print(base_url)
 
@@ -20,8 +19,7 @@ def get_source(category):
     '''
     Function that gets the json response to our url request
     '''
-    get__url = base_url.format(api_key)
-    print(get__url)
+    get__url= base_url.format(category,api_key)
 
     with urllib.request.urlopen(get__url) as url:
         get_source_data = url.read()
@@ -45,14 +43,13 @@ def process_results(source_list):
     '''
     source_results = []
     for source_item in source_list:
-        
-        
         id = source_item.get('id')
         name = source_item.get('name')
         description = source_item.get('description ')
         country = source_item.get('country ')
-        source_object = SOURCE(id,name,description,country)
-        source_results.append(source_object) 
+        if id:
+            source_object = SOURCE(id,name,description,country)
+            source_results.append(source_object) 
     return source_results    
 
 def get_article(id):
@@ -60,7 +57,7 @@ def get_article(id):
     Function that gets the json response to our url request
     '''
     get_article_url = article_base_url.format(id,api_key)
-    
+    print(get_article_url)
 
     with urllib.request.urlopen(get_article_url) as url:
         get_article_data = url.read()
@@ -70,11 +67,12 @@ def get_article(id):
 
         if get_article_response['articles']:
             article_results_list = get_article_response['articles']
-            article_results = process_results(article_results_list)
+            article_results = process_result(article_results_list)
+    # print(article_results)
     
     return article_results
 
-def process_results(article_list):
+def process_result(article_list):
     '''
     Function  that processes the article result and transform them to a list of Objects
 
@@ -88,18 +86,20 @@ def process_results(article_list):
     for article_item in article_list:
         
         
-        name = article_item.get('name')
+        # name = article_item.get('name')
+        id = article_item.get('id')
         author = article_item.get('author')
-        title = article_item.get('title ')
-        description = article_item.get('description ')
-        url = article_item.get('url ')
-        urlToImage = article_item.get('urlToImage ')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
-        content = article_item.get('content ')
-
-        if urlToImage:
-            article_object = article((name,author,title,description,url,urlToImage,publishedAt,content))
-            article_results.append(article_object)   
-
+        content = article_item.get('content')
+        
+        article_object = ARTICLE(id,author,title,description,url,urlToImage,publishedAt,content)
+        article_results.append(article_object)   
+        print(article_object.description)
+    # for article in article_results:
+    #     print(article.description)
     return article_results
     
