@@ -3,7 +3,9 @@
   <a href="article/{{ source.id }}"> {{ source.name }}</a>
   <!-- <p>{{ source.description }}</p>
   <p>{{ source.country }}</p> -->
-  <p>{{ source.id }}</p>
+  <div class="source">
+    <p>{{ source.id }}</p>
+  </div>
 </div>
 {% endfor %} {% endmacro %} {% macro displayArticlesList(articles_list) %} {%
 for article in articles_list %}
