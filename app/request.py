@@ -45,8 +45,10 @@ def process_results(source_list):
     for source_item in source_list:
         id = source_item.get('id')
         name = source_item.get('name')
-        description = source_item.get('description ')
-        country = source_item.get('country ')
+        description = source_item.get('description')
+        country = source_item.get('country')
+       
+
         if id:
             source_object = SOURCE(id,name,description,country)
             source_results.append(source_object) 

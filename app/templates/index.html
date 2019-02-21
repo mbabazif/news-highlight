@@ -6,13 +6,18 @@
 {% block content %}
 <!-- Current News -->
 <div class="container">
-  <div class="jumbotron">
-    <h1 class="text-center" style="font-weight: bold; font-size: 28px;">
-      current news
+  <!-- <div class="row"> -->
+  <div class="jumbotron" style="min-height: 500vh">
+    <h1
+      class="text-center"
+      style="font-weight: bold; font-size: 28px; color: brown; background-color: teal;"
+    >
+      <div class="well">Read The Latest World News</div>
     </h1>
+
+    <div class="row">
+      {{ macro.displaySourceList(general) }}
+    </div>
   </div>
-  <li>
-    {{ macro.displaySourceList(general) }}
-  </li>
-  {% endblock%}
 </div>
+{% endblock%}

@@ -1,10 +1,14 @@
 {% macro displaySourceList(source_list) %} {% for source in source_list %}
-<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+
+<div class="col-md-4">
   <a href="article/{{ source.id }}"> {{ source.name }}</a>
+
   <!-- <p>{{ source.description }}</p>
   <p>{{ source.country }}</p> -->
+
   <div class="source">
     <p>{{ source.id }}</p>
+    <p>{{ source.country }}</p>
   </div>
 </div>
 {% endfor %} {% endmacro %} {% macro displayArticlesList(articles_list) %} {%
@@ -13,7 +17,13 @@ for article in articles_list %}
 <h4>{{ article.author }}</h4>
 <h4>{{ article.title }}</h4>
 <h4>{{ article.description }}</h4>
-<h4>{{ article.url }}</h4>
+<a
+  href="{{ article.url }}"
+  target=" _blank"
+  class="btn"
+  style="background-color: #000; color: #fff; margin-top: 5px;"
+  >view more...</a
+>
 
 <h4>{{ article.publishedAt }}</h4>
 <h4>{{ article.content }}</h4>
