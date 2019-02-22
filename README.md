@@ -30,7 +30,9 @@ pyperclip
 In your terminal:
 
 \$ git clone https://github.com/mbabazif/news-highlight.git:
+
 \& To access the website click on this link: https://world-news1.herokuapp.com/
+
 To run the application, in your terminal:
 
 \$ python3.6 run.py
